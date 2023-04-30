@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Final Assignment by notanorange</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="hd" class="hidden">
+        <strong></strong>
+    </header>
+    <div class="wrap">
+        <div class="login_wrap">
+            <div class="login_box">
+                <h2>Welcome!</h2>
+                <form id="login_form">
+                    <input type="text" id="user_name" minlength="2" maxlength="10" placeholder="name" required />
+                    <button>LOGIN</button>
+                </form>
+                <a href="#" onclick="alert('만들어만 봤답니다~!'); return false">Create an account</a>
+            </div>
+        </div>
+        <div class="inner_wrap hidden">
+            <div class="bg_wrap"></div>
+            <button id="bg_btn">click me!</button>
+            <div class="content_box">
+                <h2>TO-DO LIST</h2>
+                <form id="todo_form">
+                    <input type="text" placeholder="Let's get started!"/>
+                </form>
+                <ul id="todo_list"></ul>
+            </div>
+        </div>
+    </div>
+    <footer id="ft" class="hidden">
+        <div id="clock">
+            <strong>⏰</strong>
+            <p></p>
+        </div>
+        <div id="weather">
+            <strong>📌 / ☔️</strong>
+            <span></span> /
+            <span></span>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
