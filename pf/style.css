@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+* {box-sizing: border-box;}
+html, body, header, main, footer, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, strong, span, 
+button, a,  {padding:0; margin:0; color:#000; font-family: "Orbit", serif; font-style:normal; font-weight:normal;}
+a {text-decoration:none;}
+ul, ol, li {list-style:none;}
