@@ -6,24 +6,24 @@ a {text-decoration:none;}
 ul, ol, li {list-style:none;}
 
 .wrap {font-size:0; height:100vh; background:#ddd;}
-.wrap header {display:inline-block; width:25%; background-color:cadetblue;}
+.wrap header {display:inline-block; width:25%; padding:30px; background-color:cadetblue;}
 header h1 a {font-size:40px;}
 header nav ul li a {font-size:24px;}
-.wrap main {display:inline-block; width:75%; vertical-align:top; height:100%; background-color:thistle;}
-.main-section h2 {font-size:35px;}
+.wrap main {display:inline-block; width:75%; vertical-align:top; height:100%; padding-left:50px; background-color:thistle;}
+.main-section h2 {font-size:35px; font-weight:600;}
 .main-section .main-title-box .statue {font-size:20px;}
 .main-section.about {}
 .main-section.projects {}
-.main-section.projects ul {display:flex; flex-wrap:wrap; gap:30px 30px;}
-.main-section.projects ul li {width:calc((100% / 2) - 30px;); border-radius:35px; overflow:hidden; position:relative;}
+.main-section.projects ul {display:flex; flex-wrap:wrap; gap:30px 30px; margin-top:100px;}
+.main-section.projects ul li {width:calc((100% / 2) - 15px); border-radius:35px; overflow:hidden; position:relative;}
 .main-section.projects ul li a {display:block;}
 .main-section.projects ul li a .img-box {}
-.main-section.projects ul li a .img-box img {}
+.main-section.projects ul li a .img-box img {width:100%;}
 .main-section.projects ul li a .hover-box {
     opacity:0; visibility:hidden; transition:all 0.3s; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
-    width:100%; height:100%; text-alig:center; padding:40px;
+    width:100%; height:100%; text-align:center; backdrop-filter:blur(5px); padding:40px;
 }
 .main-section.projects ul li a:hover .hover-box {opacity:1; visibility:visible;}
-.main-section.projects ul li a .hover-box h3 {font-size:20px;}
-.main-section.projects ul li a .hover-box p {font-size:18px;}
+.main-section.projects ul li a .hover-box h3 {font-size:20px; word-break:keep-all;}
+.main-section.projects ul li a .hover-box p {font-size:18px; word-break:keep-all;}
 footer {}
