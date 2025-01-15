@@ -4,9 +4,11 @@ html, body, header, main, footer, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, st
 a {text-decoration:none;}
 ul, ol, li {list-style:none;}
 
-.wrap {}
-.wrap header {width:25%; background-color:cadetblue;}
+.wrap {font-size:0;}
+.wrap header {display:inline-block; width:25%; background-color:cadetblue;}
 header h1 a {font-size:40px;}
 header nav ul li a {font-size:24px;}
-.wrap main {width:75%; background-color:thistle;}
+.wrap main {display:inline-block; width:75%; background-color:thistle;}
+.main-section h2 {font-size:35px;}
+.main-section .main-title-box .statue {font-size:20px;}
 footer {}
