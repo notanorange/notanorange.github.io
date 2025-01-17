@@ -31,14 +31,13 @@ header nav ul li a {display:block; font-size:20px; font-weight:600;}
     flex-wrap:wrap; align-content:center; padding:30px; text-align:center; opacity:0; visibility:hidden; transition:all 0.3s;
 }
 #projects .swiper-slide:hover .hover-box {opacity:1; visibility:visible;}
-#projects .hover-box h3 {color:#fff; width:100%; font-size:24px; font-weight:600; word-break:keep-all; margin-bottom:10px;}
+#projects .hover-box h3 {color:#fff; width:100%; font-size:20px; font-weight:600; word-break:keep-all; margin-bottom:10px;}
 #projects .hover-box p {color:#fff; width:100%; font-size:16px;}
 #projects .hover-box .btn-box {width:100%; font-size:0; margin-top:40px;}
 #projects .hover-box .btn-box a {
     display:inline-block; color:#fff; border:1px solid #fff; border-radius:30px; width:125px;
     padding:10px; font-weight:600; font-size:16px; transition:all 0.3s;
 }
-#projects .hover-box .btn-box a:first-child {margin-right:10px;}
 #projects .hover-box .btn-box a:hover {background:#fff; border-color:#fff; color:#ec8f03}
 #contact {padding:50px 0;}
 #contact h2 {font-size:60px; font-weight:bold; margin-bottom:100px;}
