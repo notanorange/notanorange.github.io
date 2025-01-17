@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/keko/static/css/main.d4f5df64.css",
+    "main.js": "/keko/static/js/main.639c2b4b.js",
+    "index.html": "/keko/index.html",
+    "main.d4f5df64.css.map": "/keko/static/css/main.d4f5df64.css.map",
+    "main.639c2b4b.js.map": "/keko/static/js/main.639c2b4b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4f5df64.css",
+    "static/js/main.639c2b4b.js"
+  ]
+}
