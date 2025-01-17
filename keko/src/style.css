@@ -1,0 +1,75 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+/* reset */
+* {box-sizing:border-box;}
+body, html, h1, h2, h3, h4, h5, h6, div, p, span, input, textarea, button, a, ul, ol, li, header, main, b, strong {font-family: 'Spoqa Han Sans Neo', sans-serif; margin:0; padding:0; font-size:16px; line-height:1.4; font-style:normal; font-weight:normal; color:#000;}
+a {text-decoration:none; color:#000;}
+ol, ul, li {list-style:none;}
+button {background:none; border:none; cursor:pointer;}
+input:focus-visible, textarea:focus-visible {outline:none;}
+/* E : reset */
+
+body {min-width:280px; background-color:#F9F7F7; height:100vh;}
+.container {max-width:1000px; width:100%; margin:0 auto; padding:0 15px;}
+header {display:flex; align-items:center; justify-content:space-between; padding:20px 0;}
+header h1 a {display:block; font-size:0; background:url("./img/keko_logo2.png") center no-repeat; width:150px; height:50px;}
+main {padding:30px 0;}
+main .main_top {display:flex; align-items:center; margin-bottom:40px;}
+main .main_top > a {margin-left:auto; width:40px; height:40px; border-radius:50%; background-color:#112D4E; font-size:0; position:relative;}
+main .main_top > a::before, main .main_top > a::after {content:''; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:17px; height:2px; background-color:#fff;}
+main .main_top > a::after {transform:translate(-50%, -50%) rotate(90deg);}
+footer {text-align:center; padding:20px 0;}
+footer p {font-size:13px;}
+/* Search */
+.search_box {position:relative; max-width:500px; width:100%;}
+.search_box input {width:100%; height:50px; padding:0 50px 0 25px; background-color:#fff; border:1px solid #DBE2EF; border-radius:40px;}
+.search_box button {position:absolute; top:50%; right:10px; transform:translateY(-50%); font-size:0; background:url("./img/search.png") center /25px no-repeat; width:50px; height:50px;}
+.search_box .delete {position:absolute; top:50%; right:25px; transform:translateY(-50%); font-size:0; background-color:#DBE2EF; width:20px; height:20px; border-radius: 50%; cursor:pointer;}
+.search_box .delete::before, .search_box .delete::after {content:''; position:absolute; top:50%; left:50%; width:50%; height:2px; background:#777;}
+.search_box .delete::before {transform:translate(-50%, -50%) rotate(45deg);}
+.search_box .delete::after {transform:translate(-50%, -50%) rotate(-45deg);}
+/* category tab */
+.sub_tab {font-size:0;}
+.sub_tab li {display:inline-block; text-align:center; margin-right:5px;}
+.sub_tab li a {display:block; width:100%; height:40px; line-height:40px; padding:0 20px; border-radius:20px; color:#112D4E; border:1px solid #112D4E; transition:all 0.3s;}
+.sub_tab li.on a, .sub_tab li a:hover {background-color:#112D4E; color:#fff;}
+/* Write */
+.create_wrap {border:1px solid #112D4E; padding:20px;}
+.create_wrap input {width:100%; border:0; height:50px; line-height:50px; padding:0 20px; border:1px solid #000;}  
+.create_wrap textarea {resize:none; height:400px; width:100%; border:0; margin-top:20px; padding:20px; border:1px solid #000;}
+.create_wrap button {display:block; height:35px; line-height:35px; width:70px; background-color:#112D4E; color:#fff; margin:10px 0 0 auto;}
+/* List */
+.note_list {display:flex; flex-wrap:wrap; gap:30px 30px;}
+.note_list li {border:1px solid #112D4E; width: calc(33.3333333% - 20px);}
+.note_list li a {position:relative;}
+.note_list li a::after {content:''; position:absolute; top:4px; left:4px; width:100%; height:100%; background-color:#3F72AF; border:1px solid #000; z-index:-1; visibility:hidden; opacity:0; transition:all 0.4s;}
+.note_list li a:hover::after {opacity:1; visibility:visible;}
+.note_list li .tag {display:block; padding:5px 15px; font-size:14px; font-style:italic; background-color:#DBE2EF; border-bottom:1px solid #000;}
+.note_list li div {display:flex; flex-wrap:wrap; padding:15px; background-color:#fff; height:270px; overflow:hidden;}
+.note_list li .note_title {width:100%; font-size:20px; font-weight:600; margin-bottom:10px;}
+.note_list li .note_content {font-size:14px; color:#999; overflow: hidden; text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 8; -webkit-box-orient: vertical; height:157px;}
+.note_list li .date {width:100%; padding-top:7px; font-size:13px; color:#777; border-top:1px dotted #000; margin-top:auto;}
+/* View */
+.view_wrap {border:1px solid #112D4E; padding:30px; background-color:#fff;}
+.view_wrap .title_box {display:flex; align-items: flex-end; justify-content: space-between;}
+.view_wrap .title_box h2 {font-size:26px; font-weight:600;}
+.view_wrap .title_box span {font-size:14px; color:#777;}
+.view_wrap p {font-size:16px; line-height: 1.5; padding:30px 0; margin:20px 0 30px; border-top:1px dotted #3F72AF; border-bottom:1px dotted #3F72AF;}
+.view_wrap .view_btn_box {display:flex; justify-content: flex-end;}
+.view_wrap .view_btn_box button {display:inline-block; height:35px; line-height:35px; width:70px; background-color:#112D4E; color:#fff; text-align:center; margin-left:10px;}
+
+@media all and (max-width:768px){
+    .note_list {gap:20px 20px;}
+    .note_list li {width:calc(50% - 10px);}
+    .create_wrap {padding:15px;}
+    .view_wrap {padding:20px;}
+    .view_wrap p {padding:20px 0; margin:20px 0;}
+}
+@media all and (max-width:420px){
+    header {flex-wrap:wrap; justify-content:center; padding:20px 0 0 0;}
+    header h1 a {background-size:130px; width:130px; height:38px;}
+    header .search_box {margin-top:50px;}
+    .main_top {margin-bottom:30px;}
+    .note_list li {width:100%;}
+    .note_list li div {height:200px;}
+    .note_list li .note_content {height:80px; -webkit-line-clamp: 4;}
+}
