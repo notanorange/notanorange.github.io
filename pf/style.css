@@ -22,8 +22,8 @@ main h2 {font-size:40px; font-weight:bold; margin-bottom:100px; text-align:cente
 #about {height:100vh; text-align:center;}
 #about .icon-box {margin:60px 0;}
 #about .icon-box img {width:350px;}
-#about .text-box p {font-size:24px; line-height:1.7;}
-#projects {height:100vh; padding:40px 0;}
+#about .text-box p {font-size:24px; line-height:1.7; word-break:keep-all;}
+#projects {height:100vh; padding:60px 0;}
 #projects .swiper-slide {border-radius:30px; overflow:hidden; position:relative;}
 #projects .img-box img {display:block; width:100%;}
 #projects .hover-box {
@@ -46,5 +46,37 @@ main h2 {font-size:40px; font-weight:bold; margin-bottom:100px; text-align:cente
 #contact ul li a {font-size:20px; color:#ec8f03;}
 /* S : FOOTER */
 footer {padding:20px 0; background:#f2eee3; text-align:center;}
-footer img {width:50px; vertical-align:bottom; margin-bottom:10px;}
+footer img {width:40px; vertical-align:bottom; margin-bottom:10px;}
 footer p {font-size:14px;}
+
+@media all and (max-width:1024px){
+    /* S : HEADER */
+    header h1 a {width:70px; height:52px; background-size:70px;}
+    header nav ul li {margin:0 20px;}
+    header nav ul li a {font-size:18px;}
+    /* S : MAIN */
+    main h2 {font-size:34px; margin-bottom:70px;}
+    #about .icon-box img {width:300px;}
+    #about .text-box p {font-size:20px;}
+    #projects {height:auto;}
+    #projects .hover-box {padding:20px;}
+    #projects .hover-box h3 {font-size:18px;}
+    #projects .hover-box .btn-box {margin-top:30px;}
+    #projects .hover-box .btn-box a {display:block; width:100%; font-size:14px;}
+    #projects .hover-box .btn-box a:nth-child(2) {margin-left:0; margin-top:10px;}
+    #contact {padding:50px 0;}
+    #contact ul li a {font-size:18px;}
+}
+@media all and (max-width:768px){
+    /* S : HEADER */
+    header h1 a {width:50px; height:40px; background-size:50px;}
+    header nav ul li {margin:0 15px;}
+    header nav ul li a {font-size:15px;}
+    /* S : MAIN */
+    main h2 {font-size:30px; margin-bottom:55px;}
+    #about {height:auto; margin-bottom:100px;}
+    #about .icon-box img {width:200px;}
+    #about .text-box p {font-size:18px;}
+    #contact ul {gap:0 15px;}
+    #contact ul li a {font-size:16px;}
+}
