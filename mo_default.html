@@ -1,0 +1,71 @@
+<!-- 주석 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>이벤트 - MO</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<script src="https://pub-onk.ndev.kyobobook.co.kr/assets/common/vendors/lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+	<script src="https://contents.kyobobook.co.kr/resources/fo/vendors/swiper/v4/swiper.min.js"></script>
+	<link rel="stylesheet" href="https://contents.kyobobook.co.kr/resources/fo/vendors/swiper/v4/swiper.min.css">
+	<link rel="stylesheet" href="https://pub-onk.ndev.kyobobook.co.kr/assets/common/css/style_mok.css">
+	<script src="https://pub-onk.ndev.kyobobook.co.kr/assets/common/js/ui_mok.js"></script>
+	<!-- 스와이퍼 적용 스타일 -->
+	<link rel="stylesheet" href="https://contents.kyobobook.co.kr/resources/fo/css/components_mok.css">
+</head>
+<body>
+<!-- // 주석  -->
+
+<!-- event pub1 -->
+<link href="https://contents.kyobobook.co.kr/pmtn/common/event/e_common_m_v2.css" rel="stylesheet">
+<link href="./style_mo.css" rel="stylesheet">
+<style>
+	.event_wrap .e_link_box {position:relative;}
+	.event_wrap .e_link_box a {position:absolute; left:16%; width:67%; height:6.5%; border:1px solid red;}
+	.event_wrap .e_link_box .e_link01 {top:26%}
+	.event_wrap .e_link_box .e_link02 {top:56.5%}
+</style>
+<section class="event_wrap">
+	<h2 class="e_hidden">교보문고 X 라이프플래닛 무한의 포인트</h2>
+	<div class="e_container bg_01">
+		<div><img src="https://contents.kyobobook.co.kr/pmtn/2025/book/250808_lifeplanet/bnD10_cont01.jpg" alt="교보문고 X 라이프플래닛 무한의 포인트 | 걷기만 해도 매월 쌓이는 포인트! 교보가 만든 건강관리 플랫폼 라플레이에 신규가입 하면 교보문고에서 사용할 수 있는 라플포인트 2,000P 100% 적립! | ○ 기간 : 2025년 8월 13일 ~ 2025년 9월 30일 ○ 대상 : 라플레이 신규가입 고객"></div>
+		<div><img src="https://contents.kyobobook.co.kr/pmtn/2025/book/250808_lifeplanet/bnD10_cont02.jpg" alt="라플레이란? 건강도 관리하고 교보문고 포인트도 받을 수 있는 교보라플 멤버십 서비스예요 | 라플포인트는 교보문고 포인트로 1:1교환 가능 | 걷기만 해도 매월 최대 2,000P 적립 | 친구초대 1인당 1,000P 무제한 적립 | 매일 참여 가능한 다양한 미션"></div>
+		<div class="e_link_box">
+			<img src="https://contents.kyobobook.co.kr/pmtn/2025/book/250808_lifeplanet/bnD10_cont03.jpg" alt="이벤트 참여 방법 - Step 1. ‘라플레이’ 신규 가입하고 라플포인트 1,000P 받기 | Step 2. 신규가입 후 ‘교보문고 회원’ 인증하고 라플포인트 추가 1,000P 받기 회원가입 완료 후, 아래 버튼을 통해 라플레이에 로그인해 주세요! | ※ 유의사항 • 본 이벤트는 2025년 8월 13일 이후 라플레이 신규가입 고객에 한해 참여할 수 있습니다. • ‘교보문고 회원 인증‘ 추가 1,000P는 이벤트 기간 내에만 적립 가능하며, 이벤트 종료 후에는 적립이 불가합니다. • 본 이벤트는 교보문고 및 제휴처의 사정으로 조기 종료될 수 있습니다. • 이벤트 관련 문의 : 교보라플 고객센터(1566-0999)">
+			<a href="#" target="_blank" title="새창열림" id="e_btn01" class="e_link01"><span class="e_hidden">라플레이 신규가입하기</span></a>
+			<a href="#" target="_blank" title="새창열림" id="e_btn02" class="e_link02"><span class="e_hidden">교보문고 회원 인증하기</span></a>
+		</div>
+	</div>
+</section>
+<script>
+	const userAgent = navigator.userAgent.toLowerCase();
+	const isIOS = /iphone|ipad|ipod/.test(userAgent);
+	const isAndroid = /android/.test(userAgent);
+
+	// 링크 정의
+	const links = {
+		ios: {
+		e_btn01: 'https://apps.apple.com/kr/app/%EA%B5%90%EB%B3%B4%EB%9D%BC%ED%94%8C/id840637440', // 라플레이 신규가입
+		e_btn02: 'lifeplanetSmartService://?appInflow=BA03' // 교보문고 회원 인증하기
+		},
+		android: {
+		e_btn01: 'https://play.google.com/store/apps/details?id=com.kyobo.lifeplanet.insurance&hl=ko', // 라플레이 신규가입
+		e_btn02: 'intent://?appInflow=BA03#Intent;scheme=lifeplanetSmartService;package=com.kyobo.lifeplanet.insurance;end' // 교보문고 회원 인증하기
+		}
+	};
+
+	// 버튼에 링크 적용
+	if (isIOS) {
+		document.getElementById('e_btn01').setAttribute('href', links.ios.e_btn01);
+		document.getElementById('e_btn02').setAttribute('href', links.ios.e_btn02);
+	} else if (isAndroid) {
+		document.getElementById('e_btn01').setAttribute('href', links.android.e_btn01);
+		document.getElementById('e_btn02').setAttribute('href', links.android.e_btn02);
+	}
+</script>
+<!-- // event pub1 -->
+
+<!-- 주석 -->
+</body>
+</html>
+<!-- // 주석 -->
