@@ -38,30 +38,77 @@
 	</div>
 </section>
 <script>
+	// const userAgent = navigator.userAgent.toLowerCase();
+	// const isIOS = /iphone|ipad|ipod/.test(userAgent);
+	// const isAndroid = /android/.test(userAgent);
+
+	// // 링크 정의
+	// const links = {
+	// 	ios: {
+	// 	e_btn01: 'https://apps.apple.com/kr/app/%EA%B5%90%EB%B3%B4%EB%9D%BC%ED%94%8C/id840637440', // 라플레이 신규가입
+	// 	e_btn02: 'lifeplanetSmartService://?appInflow=BA03' // 교보문고 회원 인증하기
+	// 	},
+	// 	android: {
+	// 	e_btn01: 'https://play.google.com/store/apps/details?id=com.kyobo.lifeplanet.insurance&hl=ko', // 라플레이 신규가입
+	// 	e_btn02: 'intent://?appInflow=BA03#Intent;scheme=lifeplanetSmartService;package=com.kyobo.lifeplanet.insurance;end' // 교보문고 회원 인증하기
+	// 	}
+	// };
+
+	// // 버튼에 링크 적용
+	// if (isIOS) {
+	// 	document.getElementById('e_btn01').setAttribute('href', links.ios.e_btn01);
+	// 	document.getElementById('e_btn02').setAttribute('href', links.ios.e_btn02);
+	// } else if (isAndroid) {
+	// 	document.getElementById('e_btn01').setAttribute('href', links.android.e_btn01);
+	// 	document.getElementById('e_btn02').setAttribute('href', links.android.e_btn02);
+	// }
+
+	// fallback 추가
 	const userAgent = navigator.userAgent.toLowerCase();
 	const isIOS = /iphone|ipad|ipod/.test(userAgent);
 	const isAndroid = /android/.test(userAgent);
 
-	// 링크 정의
 	const links = {
 		ios: {
-		e_btn01: 'https://apps.apple.com/kr/app/%EA%B5%90%EB%B3%B4%EB%9D%BC%ED%94%8C/id840637440', // 라플레이 신규가입
-		e_btn02: 'lifeplanetSmartService://?appInflow=BA03' // 교보문고 회원 인증하기
+		e_btn01: 'https://apps.apple.com/kr/app/%EA%B5%90%EB%B3%B4%EB%9D%BC%ED%94%8C/id840637440',
+		e_btn02: 'lifeplanetSmartService://?appInflow=BA03',
+		storeFallback: 'https://apps.apple.com/kr/app/%EA%B5%90%EB%B3%B4%EB%9D%BC%ED%94%8C/id840637440'
 		},
 		android: {
-		e_btn01: 'https://play.google.com/store/apps/details?id=com.kyobo.lifeplanet.insurance&hl=ko', // 라플레이 신규가입
-		e_btn02: 'intent://?appInflow=BA03#Intent;scheme=lifeplanetSmartService;package=com.kyobo.lifeplanet.insurance;end' // 교보문고 회원 인증하기
+		e_btn01: 'https://play.google.com/store/apps/details?id=com.kyobo.lifeplanet.insurance&hl=ko',
+		e_btn02: 'intent://?appInflow=BA03#Intent;scheme=lifeplanetSmartService;package=com.kyobo.lifeplanet.insurance;end',
+		storeFallback: 'https://play.google.com/store/apps/details?id=com.kyobo.lifeplanet.insurance&hl=ko'
 		}
 	};
 
-	// 버튼에 링크 적용
-	if (isIOS) {
-		document.getElementById('e_btn01').setAttribute('href', links.ios.e_btn01);
-		document.getElementById('e_btn02').setAttribute('href', links.ios.e_btn02);
-	} else if (isAndroid) {
-		document.getElementById('e_btn01').setAttribute('href', links.android.e_btn01);
-		document.getElementById('e_btn02').setAttribute('href', links.android.e_btn02);
+	function setLinkWithFallback(btnId, linkKey) {
+		const btn = document.getElementById(btnId);
+
+		btn.addEventListener('click', function(e) {
+		e.preventDefault();
+
+		if (isIOS) {
+			// 앱 실행 시도
+			window.location = links.ios[linkKey];
+
+			// 1.5초 후 앱스토어 이동 (fallback)
+			setTimeout(() => {
+			window.location = links.ios.storeFallback;
+			}, 1500);
+
+		} else if (isAndroid) {
+			// 앱 실행 시도 (인텐트 URI)
+			window.location = links.android[linkKey];
+
+			// Android는 인텐트 URI 자체에 fallback 포함하는 경우가 많지만, 퍼블 영역에서는 여기까지
+		} else {
+			alert('지원하지 않는 환경입니다.');
+		}
+		});
 	}
+
+	setLinkWithFallback('e_btn01', 'e_btn01');
+	setLinkWithFallback('e_btn02', 'e_btn02');
 </script>
 <!-- // event pub1 -->
 
